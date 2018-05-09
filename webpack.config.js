@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -56,6 +56,20 @@ module.exports = {
         ]),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Digital Mobility',
+            template: './public/index.html',
+            minify: {
+                collapseWhitespace: true,
+                keepClosingSlash: false,
+                removeComments: true,
+                removeOptionalTags: true,
+                removeStyleLinkTypeAttributes: true,
+                removeTagWhitespace: true,
+                trimCustomFragments: true,
+                useShortDoctype: true
+            }
+          }),
     ],
     devServer: {
         contentBase: path.join(__dirname, "dist"),
