@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -9,6 +9,18 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, 'dist'),
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: 'initial',
+                    name: 'vendor',
+                    test: /node_modules/,
+                    enforce: true
+                }
+            }
+        }
     },
     devtool: 'source-map',
     resolve: {
@@ -44,6 +56,20 @@ module.exports = {
         ]),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Digital Mobility',
+            template: './public/index.html',
+            minify: {
+                collapseWhitespace: true,
+                keepClosingSlash: false,
+                removeComments: true,
+                removeOptionalTags: true,
+                removeStyleLinkTypeAttributes: true,
+                removeTagWhitespace: true,
+                trimCustomFragments: true,
+                useShortDoctype: true
+            }
+          }),
     ],
     devServer: {
         contentBase: path.join(__dirname, "dist"),
