@@ -4,11 +4,23 @@
     grid-template-rows: 2fr 1fr;
     grid-gap: 100px;
     justify-self: center;
+    grid-template-areas:
+        "text"
+        "image";
 }
 
 @media(min-width: 1024px) {
     .what {
         grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "text image";
     }
 }
 
+.text {
+    grid-area: text;
+}
+
+.image {
+    grid-area: image;
+}
