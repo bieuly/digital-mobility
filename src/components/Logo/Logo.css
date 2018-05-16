@@ -1,0 +1,8 @@
+.logo {
+    justify-self: center;
+    width: 170px;
+    height: 170px;
+    grid-area: logo;
+    padding-top: 170px;
+    padding-bottom: 10px;
+}

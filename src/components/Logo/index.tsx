@@ -1,10 +1,11 @@
 import * as React from 'react';
+import * as styles from './Logo.css';
 
 class Logo extends React.Component {
   
   render() {
      return (
-      <svg width="170px" height="170px" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24">
+      <svg className={styles.logo} viewBox="0 0 24 24">
    <path d="M0.776,12.037c0-6.19,5.019-11.209,11.21-11.209c6.189,0,11.206,5.02,11.206,11.209
      c0,6.192-5.017,11.209-11.206,11.209C5.795,23.246,0.776,18.229,0.776,12.037z M21.44,12.037c0-5.22-4.23-9.454-9.454-9.454
      c-5.222,0-9.454,4.234-9.454,9.454c0,5.221,4.232,9.454,9.454,9.454C17.21,21.491,21.44,17.258,21.44,12.037z"/>
