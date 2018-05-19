@@ -1,0 +1,9 @@
+.landing {
+    display: grid;
+    grid-gap: 150px;
+}
+
+h1 {
+    line-height: 1.0;
+    padding-bottom: 22.0px;
+}

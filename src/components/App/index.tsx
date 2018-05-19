@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as styles from './App.css';
 import Hero from '../Hero';
-import What from '../What';
-import Why from '../Why';
-import How from '../How';
+import Landing from '../Landing';
 import Footer from '../Footer';
+import { Switch, Route } from 'react-router';
+import LearnMore from '../LearnMore';
 
 class App extends React.Component {
     render() {
@@ -14,9 +14,12 @@ class App extends React.Component {
                     <Hero/>
                 </div>
                 <div className={styles.content}>
-                    <What/>
-                    <Why/>
-                    <How/>
+                    <Switch>
+                        <Route exact path='/' component={Landing}/>
+                        <Route exact path='/learnMore' component={LearnMore}/>
+                    </Switch>
+                </div>
+                <div>
                     <Footer/>
                 </div>
             </div>
