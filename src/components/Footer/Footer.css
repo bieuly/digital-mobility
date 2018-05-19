@@ -1,13 +1,12 @@
 .footer {
     grid-area: Footer;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     grid-gap: 60px;
-    justify-self: center;
-    justify-items: center;
+    justify-content: center;
     grid-template-areas:
         "email twitter facebook";
-    padding: 150px 0 100px 0;
+    padding: 0px 0 100px 0;
 }
 
 .email {
